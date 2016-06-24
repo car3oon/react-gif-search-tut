@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import GifList from '../components/GifList';
 import SearchBar from '../components/SearchBar';
 import request from 'superagent';
+import './styles/app.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +19,6 @@ class App extends React.Component {
 
     request.get(url, (err, res) => {
       this.setState({ gifs: res.body.data })
-      console.log(res.body.data);
     });
   }
 
